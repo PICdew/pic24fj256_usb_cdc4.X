@@ -1,0 +1,5 @@
+# Artefact
+*.o
+*.d
+
+dist
