@@ -324,7 +324,7 @@ void UART_SetLineCoding(uart_t *obj) {
     uint16_t clkDiv, stopBit, parity;
     uint16_t uxVal;
     
-    clkDiv = PERIP_CLK_FREQ / (obj->lineCoding.dwDTERate << 2);
+    clkDiv = PERIP_CLK_FREQ / (obj->lineCoding.dwDTERate << 2) - 1;
     stopBit = (obj->lineCoding.bCharFormat == NUM_STOP_BITS_2)? 1 : 0;
     switch(obj->lineCoding.bParityType) {
         case PARITY_ODD:
